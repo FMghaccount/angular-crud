@@ -19,6 +19,6 @@ export class ProductListComponent {
 
   ngOnInit() {
     this.title.setTitle('لیست محصولات');
-    this.products = this.productsService.getProducts();
+    this.products = this.productsService.getProducts().reverse();
   }
 }
