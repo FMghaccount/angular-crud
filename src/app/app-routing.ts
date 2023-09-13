@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ProductGuard } from './shared/guards/product.guard';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,7 @@ export const routes: Routes = [
   },
   {
     path: 'product/:id',
+    canActivate: [ProductGuard],
     loadComponent: () =>
       import(
         './components/products/product-detail/product-detail.component'
@@ -24,6 +26,7 @@ export const routes: Routes = [
   },
   {
     path: 'product/:id/edit',
+    canActivate: [ProductGuard],
     loadComponent: () =>
       import('./components/products/product-form/product-form.component').then(
         (module) => module.ProductFormComponent
