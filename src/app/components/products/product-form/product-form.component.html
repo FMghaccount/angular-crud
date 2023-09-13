@@ -1,0 +1,137 @@
+<div class="container-fluid container-md mb-5 mt-4">
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-12">
+            <p
+              class="help-block color-red"
+              *ngIf="!productForm.valid && productForm.touched"
+            >
+              لطفاً مقادیر خواسته شده در فرم را تکمیل کنید
+            </p>
+            <!-- <button class="btn btn-success me-3" type="submit" (click)="onAddIngredients()">ذخیره</button> -->
+            <button
+              [disabled]="!productForm.valid"
+              class="btn btn-success"
+              type="submit"
+            >
+              ثبت
+            </button>
+            <button
+              class="btn btn-danger me-3"
+              type="button"
+              (click)="onCancel()"
+            >
+              لغو
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-12 mb-3 form-group d-flex flex-column-reverse gap-1 justify-content-end"
+          >
+            <!-- <p class="color-red" *ngIf="!name.valid && name.touched">لطفاً عنوان را وارد کنید</p> -->
+            <input
+              formControlName="productTitle"
+              type="text"
+              id="productTitle"
+              class="form-control"
+            />
+            <label for="productTitle">عنوان</label>
+          </div>
+          <p
+            class="help-block color-red"
+            *ngIf="!productTitle.valid && productTitle.touched"
+          >
+            <span *ngIf="productTitle.errors?.['required']"
+              >لطفاً عنوان را وارد کنید</span
+            >
+          </p>
+          <div
+            class="col-12 mb-3 form-group d-flex flex-column-reverse gap-1 justify-content-end"
+          >
+            <!-- <p class="color-red" *ngIf="!name.valid && name.touched">لطفاً عنوان را وارد کنید</p> -->
+            <input
+              formControlName="productPrice"
+              type="number"
+              id="productPrice"
+              class="form-control"
+            />
+            <label for="productPrice">قیمت</label>
+          </div>
+          <p
+            class="help-block color-red"
+            *ngIf="!productPrice.valid && productPrice.touched"
+          >
+            <span *ngIf="productPrice.errors?.['required']"
+              >لطفاً قیمت را وارد کنید - بزرگتر یا مساوی صفر</span
+            >
+          </p>
+          <div
+            class="col-12 mb-3 mt-3 form-group d-flex flex-column-reverse gap-1 justify-content-end"
+          >
+            <!-- <p class="color-red" *ngIf="!name.valid && name.touched">لطفاً عنوان را وارد کنید</p> -->
+            <input
+              formControlName="productImage"
+              #imagePath
+              type="text"
+              id="productImage"
+              class="form-control"
+            />
+            <label for="productImage">تصویر</label>
+          </div>
+          <p
+            class="help-block color-red"
+            *ngIf="!productImage.valid && productImage.touched"
+          >
+            <span *ngIf="productImage.errors?.['required']"
+              >لطفاً آدرس تصویر را وارد کنید</span
+            >
+          </p>
+          <div *ngIf="imagePath.value" class="col-12 mt-4 mb-4">
+            <img [src]="imagePath.value" alt=""  class="img-fluid product-image" />
+          </div>
+          <div
+            class="col-12 mt-3 form-group d-flex flex-column-reverse gap-1 justify-content-end"
+          >
+            <!-- <p class="color-red" *ngIf="!name.valid && name.touched">لطفاً عنوان را وارد کنید</p> -->
+            <!-- <input type="text" id="description" class="form-control"> -->
+            <textarea
+              formControlName="productDescription"
+              id="productDescription"
+              class="form-control"
+              rows="3"
+            ></textarea>
+            <label for="productDescription">توضیحات</label>
+          </div>
+          <p
+            class="help-block color-red"
+            *ngIf="!productDescription.valid && productDescription.touched"
+          >
+            <span *ngIf="productDescription.errors?.['required']"
+              >لطفاً توضیحات را وارد کنید</span
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div
+      *ngIf="product.length === 0"
+      class="container border py-3 rounded-2 border-danger border-3 mb-4 mt-5"
+    >
+      <div
+        class="row justify-content-center align-content-center align-items-center flex-column"
+      >
+        <h4 class="text-center text-danger">محصول مورد نظر یافت نشد</h4>
+        <p class="text-center py-4">
+          <a routerLink="/" class="btn btn-outline-primary"
+            >بازگشت به صفحه اصلی</a
+          >
+        </p>
+      </div>
+    </div>
+  </div> -->
+</div>
