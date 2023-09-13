@@ -69,7 +69,7 @@ export class ProductFormComponent {
           this.title.setTitle('افزودن محصول جدید');
         }
       } else {
-        this.title.setTitle('محصول مورد نظر یافت نشد');
+        this.title.setTitle('افزودن محصول جدید');
       }
     });
   }
