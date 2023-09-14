@@ -20,7 +20,15 @@ export class ProductsService {
 
   addProduct(product: Product) {
     this.products.push(product);
-    console.log(this.products);
+  }
+
+  searchProducts(searchTerm: string) {
+    return this.products.filter((product) => {
+      return (
+        product.pageTitle.includes(searchTerm.trim()) ||
+        product.title.includes(searchTerm.trim())
+      );
+    });
   }
 
   updateProduct(product: Product, productId) {

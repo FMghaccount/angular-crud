@@ -125,7 +125,7 @@ export class ProductFormComponent {
 
   onSubmit() {
     const newProduct: Product = new Product(
-      this.productService.getProducts().length + 1,
+      this.productService.getProducts().length,
       0,
       this.productForm.value['productTitle'],
       this.productForm.value['productTitle'],

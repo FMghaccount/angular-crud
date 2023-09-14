@@ -28,7 +28,11 @@ export class ProductGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    let product = this.productService.getProduct(+route.params['id']);
+    let products = this.productService.getProducts();
+    let product = products.filter((product) => {
+      return product.id === +route.params['id'];
+    });
+
     if (product.length > 0) {
       return true;
     } else {
