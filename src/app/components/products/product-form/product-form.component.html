@@ -10,7 +10,6 @@
             >
               لطفاً مقادیر خواسته شده در فرم را تکمیل کنید
             </p>
-            <!-- <button class="btn btn-success me-3" type="submit" (click)="onAddIngredients()">ذخیره</button> -->
             <button
               [disabled]="!productForm.valid"
               class="btn btn-success"
@@ -31,11 +30,11 @@
           <div
             class="col-12 mb-3 form-group d-flex flex-column-reverse gap-1 justify-content-end"
           >
-            <!-- <p class="color-red" *ngIf="!name.valid && name.touched">لطفاً عنوان را وارد کنید</p> -->
             <input
               formControlName="productTitle"
               type="text"
               id="productTitle"
+              placeholder="مثال: آیفون 13|128| صورتی"
               class="form-control"
             />
             <label for="productTitle">عنوان</label>
@@ -51,7 +50,6 @@
           <div
             class="col-12 mb-3 form-group d-flex flex-column-reverse gap-1 justify-content-end"
           >
-            <!-- <p class="color-red" *ngIf="!name.valid && name.touched">لطفاً عنوان را وارد کنید</p> -->
             <input
               formControlName="productPrice"
               type="number"
@@ -71,7 +69,6 @@
           <div
             class="col-12 mb-3 mt-3 form-group d-flex flex-column-reverse gap-1 justify-content-end"
           >
-            <!-- <p class="color-red" *ngIf="!name.valid && name.touched">لطفاً عنوان را وارد کنید</p> -->
             <input
               formControlName="productImage"
               #imagePath
@@ -95,8 +92,6 @@
           <div
             class="col-12 mt-3 form-group d-flex flex-column-reverse gap-1 justify-content-end"
           >
-            <!-- <p class="color-red" *ngIf="!name.valid && name.touched">لطفاً عنوان را وارد کنید</p> -->
-            <!-- <input type="text" id="description" class="form-control"> -->
             <textarea
               formControlName="productDescription"
               id="productDescription"
@@ -117,21 +112,4 @@
       </form>
     </div>
   </div>
-  <!-- <div class="row">
-    <div
-      *ngIf="product.length === 0"
-      class="container border py-3 rounded-2 border-danger border-3 mb-4 mt-5"
-    >
-      <div
-        class="row justify-content-center align-content-center align-items-center flex-column"
-      >
-        <h4 class="text-center text-danger">محصول مورد نظر یافت نشد</h4>
-        <p class="text-center py-4">
-          <a routerLink="/" class="btn btn-outline-primary"
-            >بازگشت به صفحه اصلی</a
-          >
-        </p>
-      </div>
-    </div>
-  </div> -->
 </div>

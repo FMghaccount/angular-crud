@@ -31,12 +31,19 @@ export class ProductsService {
     });
   }
 
-  updateProduct(product: Product, productId) {
-    this.products[productId].price = product.price;
-    this.products[productId].productDescription = product.productDescription;
-    this.products[productId].image = product.image;
-    this.products[productId].title = product.title;
-    this.products[productId].pageTitle = product.pageTitle;
+  updateProduct(product: Product, productId: number) {
+    console.log(product);
+    console.log(productId);
+
+    this.products[this.products.length - 1 - productId].price = product.price;
+    this.products[this.products.length - 1 - productId].productDescription =
+      product.productDescription;
+    this.products[this.products.length - 1 - productId].image = product.image;
+    this.products[this.products.length - 1 - productId].title = product.title;
+    this.products[this.products.length - 1 - productId].pageTitle =
+      product.pageTitle;
+
+    console.log(products);
   }
 
   constructor() {}
