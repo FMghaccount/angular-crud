@@ -32,9 +32,6 @@ export class ProductsService {
   }
 
   updateProduct(product: Product, productId: number) {
-    console.log(product);
-    console.log(productId);
-
     this.products[this.products.length - 1 - productId].price = product.price;
     this.products[this.products.length - 1 - productId].productDescription =
       product.productDescription;
@@ -42,8 +39,6 @@ export class ProductsService {
     this.products[this.products.length - 1 - productId].title = product.title;
     this.products[this.products.length - 1 - productId].pageTitle =
       product.pageTitle;
-
-    console.log(products);
   }
 
   constructor() {}
