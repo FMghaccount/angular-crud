@@ -6,7 +6,7 @@ import * as products from '../data/products';
   providedIn: 'root',
 })
 export class ProductsService {
-  products: Product[] = products.products;
+  products: Product[] = products.products.reverse();
 
   getProducts() {
     return this.products;
@@ -19,7 +19,7 @@ export class ProductsService {
   }
 
   addProduct(product: Product) {
-    this.products.push(product);
+    this.products.unshift(product);
   }
 
   searchProducts(searchTerm: string) {

@@ -32,4 +32,12 @@ export const routes: Routes = [
         (module) => module.ProductFormComponent
       ),
   },
+  {
+    path: '404',
+    loadComponent: () =>
+      import(
+        './shared/components/not-found-page/not-found-page.component'
+      ).then((module) => module.NotFoundPageComponent),
+  },
+  { path: '**', redirectTo: '/404', pathMatch: 'full' },
 ];

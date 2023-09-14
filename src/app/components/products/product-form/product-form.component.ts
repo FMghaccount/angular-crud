@@ -43,28 +43,6 @@ export class ProductFormComponent {
       if (this.product.length > 0) {
         if (this.editMode) {
           this.title.setTitle('ویرایش - ' + this.product[0]?.pageTitle);
-          if (this.meta.getTag(`name=description`)) {
-            this.meta.updateTag(
-              { name: 'description', content: `${this.product[0]?.pageTitle}` },
-              `name='description'`
-            );
-          } else {
-            this.meta.addTag({
-              name: 'description',
-              content: `${this.product[0]?.pageTitle}`,
-            });
-          }
-          if (this.meta.getTag(`name=keywords`)) {
-            this.meta.updateTag(
-              { name: 'keywords', content: `${this.product[0]?.pageTitle}` },
-              `name='keywords'`
-            );
-          } else {
-            this.meta.addTag({
-              name: 'keywords',
-              content: `${this.product[0]?.pageTitle}`,
-            });
-          }
         } else {
           this.title.setTitle('افزودن محصول جدید');
         }
@@ -90,7 +68,7 @@ export class ProductFormComponent {
   private initForm() {
     let productTitle = '';
     let productDescription = '';
-    let productPrice = 0;
+    let productPrice = 1;
     let productImage = '';
 
     if (this.editMode) {
@@ -107,7 +85,7 @@ export class ProductFormComponent {
       ]),
       productPrice: new FormControl(productPrice, [
         Validators.required,
-        Validators.min(0),
+        Validators.min(1),
       ]),
       productImage: new FormControl(productImage, [Validators.required]),
     });

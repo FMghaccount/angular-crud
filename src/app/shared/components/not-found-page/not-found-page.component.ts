@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-products-page',
+  selector: 'app-not-found-page',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './products-page.component.html',
-  styleUrls: ['./products-page.component.css'],
+  templateUrl: './not-found-page.component.html',
+  styleUrls: ['./not-found-page.component.css']
 })
-export class ProductsPageComponent {}
+export class NotFoundPageComponent {
+
+}

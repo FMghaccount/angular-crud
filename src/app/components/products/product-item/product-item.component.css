@@ -28,3 +28,11 @@
 .product-panel .card-body, .product-panel a {
   width: 90%;
 }
+
+.card {
+  min-height: 312px;
+}
+
+.product-panel {
+  min-height: 278px;
+}
