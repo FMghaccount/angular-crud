@@ -25,12 +25,14 @@
   border-radius: 10px;
 }
 
-.product-panel .card-body, .product-panel a {
+.product-panel .card-body,
+.product-panel a {
   width: 90%;
 }
 
-.card {
-  min-height: 312px;
+.card,
+.card .row {
+  min-height: 356px;
 }
 
 .product-panel {
